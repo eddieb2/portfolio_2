@@ -3,9 +3,53 @@
 	height: 100%;
 	justify-content: center;
 	background: $monochromatic2;
+
+	#section-wrapper {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-size: 4rem;
+		color: white;
+
+		div {
+			justify-content: center;
+		}
+
+		#name-wrapper {
+			border-bottom: 1px solid white;
+			border-bottom-left-radius: 1rem;
+			width: 40%;
+			margin-bottom: 1%;
+			padding-bottom: 1%;
+			color: white !important;
+		}
+
+		#icon-wrapper * {
+			margin-left: 1%;
+			margin-right: 1%;
+			color: white;
+			cursor: pointer;
+		}
+
+		#icon-wrapper:hover {
+			color: $monochromatic1;
+			transition: 1s ease-in;
+		}
+
+		#title-wrapper {
+			font-size: 2rem;
+			width: 50%;
+			margin-bottom: 2%;
+			color: white !important;
+		}
+	}
+
 	div {
+		width: 100%;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		p {
 			border-left: 1.5rem solid white;
 			border-bottom: 0.25rem solid white;

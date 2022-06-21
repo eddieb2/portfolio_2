@@ -28,13 +28,20 @@ function App() {
 
 		// const welcomePage = document.querySelector('.enter-site');
 		const welcomePage = document.querySelector('.welcome-page');
+		const popUp = document.querySelector('#popup-parent');
 
+		console.log(popUp);
 		console.log(darkMode);
 
+		// FIXME Needs to be done differently
 		if (darkMode.checkedB === true) {
 			welcomePage.classList.add('dark-mode');
 			welcomePage.classList.remove('light-mode');
+			popUp.classList.add('dark-mode');
+			popUp.classList.remove('light-mode');
 		} else {
+			popUp.classList.add('light-mode');
+			popUp.classList.remove('dark-mode');
 			welcomePage.classList.add('light-mode');
 			welcomePage.classList.remove('dark-mode');
 		}
