@@ -4,7 +4,7 @@ import { ToggleWrapper } from './ThemeToggle.styles';
 
 const ThemeToggle = ({ theme, themeToggler }) => {
 	return (
-		<ToggleWrapper maxWidth='xs'>
+		<ToggleWrapper>
 			{theme === 'light' ? (
 				<MdDarkMode onClick={themeToggler} />
 			) : (
