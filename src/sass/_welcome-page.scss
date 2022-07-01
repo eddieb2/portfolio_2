@@ -1,11 +1,10 @@
 .enter-site {
 	position: absolute;
-	z-index: 1;
 	height: 100%;
 	width: 100%;
 	font-size: 6rem;
-	clip-path: circle(100%);
-	-webkit-clip-path: circle(100%);
+	clip-path: circle(100%); // FIXME ????? old?
+	-webkit-clip-path: circle(100%); // FIXME ???? old?
 	@media (max-width: 600px) {
 		font-size: 4rem;
 	}
@@ -18,42 +17,7 @@
 		top: 45%;
 		left: 48%;
 		text-align: center;
-		// FIXME Probably can be removed
-		// h1 {
-		// 	color: $base-color;
-		// 	font-size: 1.25rem;
-		// 	text-align: center;
-		// 	transition: all 1s ease-in;
-		// 	&:hover {
-		// 		color: black;
-		// 		text-decoration: underline;
-		// 	}
-		// }
 	}
-}
-
-.light-mode * {
-	background-color: $monochromatic2;
-	color: $base-color;
-	transition: 2s linear;
-}
-// FIXME When in light mode the door changes to purple
-// FIXME Sun icon is fading in. Needs to be static
-// .light-mode:not([data-attr='icon']) {
-// 	transition: none !important;
-// }
-
-// FIXME Switch bar's color is too light. Darken it.
-// #switch {
-// 	color: red !important;
-// 	background-color: red !important;
-// }
-
-.dark-mode * {
-	// background: #222;
-	background: $dark-scheme3;
-	color: white !important;
-	transition: 2s linear;
 }
 
 .no-animation {
@@ -69,7 +33,7 @@
 	top: 20%;
 	left: 20%;
 	padding: 1%;
-	color: $welcome-letter-color;
+	// color: $welcome-letter-color;
 	animation: first 2s;
 }
 .second {
@@ -77,7 +41,7 @@
 	top: 20%;
 	left: 30%;
 	padding: 1%;
-	color: $welcome-letter-color;
+	// color: $welcome-letter-color;
 	animation: first 2s;
 }
 .third {
@@ -85,7 +49,7 @@
 	top: 20%;
 	left: 40%;
 	padding: 1%;
-	color: $welcome-letter-color;
+	// color: $welcome-letter-color;
 	animation: first 2s;
 }
 .fourth {
@@ -93,7 +57,7 @@
 	top: 20%;
 	left: 50%;
 	padding: 1%;
-	color: $welcome-letter-color;
+	// color: $welcome-letter-color;
 	animation: first 2s;
 }
 .fifth {
@@ -101,7 +65,7 @@
 	top: 20%;
 	left: 60%;
 	padding: 1%;
-	color: $welcome-letter-color;
+	// color: $welcome-letter-color;
 	animation: first 2s;
 }
 .sixth {
@@ -109,7 +73,7 @@
 	top: 20%;
 	left: 70%;
 	padding: 1%;
-	color: $welcome-letter-color;
+	// color: $welcome-letter-color;
 	animation: first 2s;
 }
 .seventh {
@@ -117,7 +81,7 @@
 	top: 20%;
 	left: 80%;
 	padding: 1%;
-	color: $welcome-letter-color;
+	// color: $welcome-letter-color;
 	animation: first 2s;
 }
 
@@ -267,7 +231,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	color: black !important;
+	// color: black !important;
 	font-size: 1.2rem;
 	padding-top: 1%;
 	padding-left: 1%;

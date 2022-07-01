@@ -1,9 +1,10 @@
 #popup-parent {
 	display: flex;
-	height: 100%;
+	position: relative;
+	z-index: 1;
+	height: 100vh;
 	justify-content: center;
 	background: $monochromatic2;
-
 	#section-wrapper {
 		width: 100%;
 		display: flex;
@@ -41,7 +42,7 @@
 			font-size: 2rem;
 			width: 50%;
 			margin-bottom: 2%;
-			color: white !important;
+			// color: white !important;
 		}
 	}
 

@@ -1,13 +1,12 @@
 import React from 'react';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { useSpring, animated } from 'react-spring';
 
 const PopUp = (props) => {
+	// Help Functions
 	const handleRedirect = (link) => {
 		if (link === 'linkedin') {
-			// window.location.href =
-			// 	'https://www.linkedin.com/in/edward-blanciak/';
-
 			window
 				.open(
 					'https://www.linkedin.com/in/edward-blanciak/',
@@ -21,9 +20,17 @@ const PopUp = (props) => {
 		}
 	};
 
+	const animatedProps = useSpring({
+		to: { opacity: 1 },
+		from: { opacity: 0 },
+		config: { duration: 3000 },
+	});
+
+	const animatedProps2 = useSpring({});
+
 	return (
 		<div id='popup-parent'>
-			<div id='section-wrapper'>
+			<animated.div style={animatedProps} id='section-wrapper'>
 				<div id='name-wrapper'>
 					E D D I E <br /> B L A N C I A K
 				</div>
@@ -38,14 +45,14 @@ const PopUp = (props) => {
 						onClick={() => handleRedirect('github')}
 					/>
 				</div>
-			</div>
-			<div>
+			</animated.div>
+			<animated.div style={animatedProps}>
 				<p>
 					W E B S I T E <br />
 					U N D E R <br />
 					R E P A I R <br />
 				</p>
-			</div>
+			</animated.div>
 		</div>
 	);
 };
