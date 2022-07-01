@@ -6,6 +6,7 @@ export const ToggleWrapper = styled(Box)`
 	position: absolute;
 	top: 10;
 	font-size: 3rem;
+	padding: 0.5rem;
 
 	@media (max-width: 800px) {
 		font-size: 2.75rem;
