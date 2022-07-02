@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 import { Box } from '@mui/material';
+import { animated } from 'react-spring';
+import { MdOutlineDarkMode, MdDarkMode } from 'react-icons/md';
 
-export const ToggleWrapper = styled(Box)`
+export const ToggleWrapper = styled(animated.div)`
 	z-index: 999;
 	position: absolute;
-	top: 10;
 	font-size: 3rem;
 	padding: 0.5rem;
+	transition: transform 2s;
+
+	&:hover {
+		transform: rotate(90deg);
+	}
 
 	@media (max-width: 800px) {
 		font-size: 2.75rem;
@@ -19,4 +25,16 @@ export const ToggleWrapper = styled(Box)`
 	@media (max-width: 450px) {
 		font-size: 2.25rem;
 	}
+
+	& > * {
+		cursor: pointer;
+	}
+`;
+
+export const LightModeIcon = styled(animated(MdDarkMode))`
+	font-size: 6rem;
+`;
+
+export const DarkModeIcon = styled(animated(MdOutlineDarkMode))`
+	font-size: 6rem;
 `;
