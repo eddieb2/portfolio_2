@@ -1,4 +1,5 @@
-import { useSpring } from 'react-spring';
+import { useState, useEffect } from 'react';
+import { useSpring, useTransition, animated } from 'react-spring';
 import {
 	WelcomeWrapper,
 	Reflection,
@@ -7,32 +8,38 @@ import {
 } from './WelcomePage.styles';
 import { FaDoorOpen } from 'react-icons/fa';
 
-const WelcomePage = () => {
-	const enterAnimation = useSpring({
-		// NOTE - left to right animation may look better
-		to: { transform: 'translate(0,15rem)' },
-		from: { transform: 'translate(0,-5.00rem) ' },
-		config: { duration: 1250 }, // 1500
-	});
-
+const WelcomePage = ({ text }) => {
 	const fadeIn = useSpring({
 		to: { opacity: 1 },
 		from: { opacity: 0 },
+		delay: 0,
+		config: { duration: 2000 },
+	});
+
+	const fadeInReflection = useSpring({
+		to: { opacity: 1 },
+		from: { opacity: 0 },
 		delay: 1000,
-		config: { duration: 3000 },
+		config: { duration: 2000 },
 	});
 
 	return (
-		<WelcomeWrapper style={enterAnimation}>
-			<TextWrapper>w e l c o m e</TextWrapper>
-			<Reflection style={fadeIn}>w e l c o m e</Reflection>
-			{/* <Border /> */}
-			{/* <div>
-				<FaDoorOpen />
-			</div>
-			<Reflection>
-				<FaDoorOpen />
-			</Reflection> */}
+		<WelcomeWrapper style={fadeIn}>
+			<TextWrapper>{text}</TextWrapper>
+			<Reflection style={fadeInReflection}>{text}</Reflection>
+			<p
+				style={{
+					fontSize: '2.8rem',
+					width: '35%',
+					marginTop: '5%',
+				}}
+			>
+				Lorem ipsum dolor sit, amet consectetur adipisicing
+				elit. Nobis, explicabo eveniet sit, quae nemo ab
+				suscipit animi quibusdam vel non corporis praesentium!
+				Modi corporis, beatae officia voluptas perferendis
+				aliquam ullam.
+			</p>
 		</WelcomeWrapper>
 	);
 };

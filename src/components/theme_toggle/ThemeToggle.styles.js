@@ -4,9 +4,8 @@ import { animated } from 'react-spring';
 import { MdOutlineDarkMode, MdDarkMode } from 'react-icons/md';
 
 export const ToggleWrapper = styled(animated.div)`
-	z-index: 999;
 	position: absolute;
-	font-size: 3rem;
+	z-index: 999;
 	padding: 0.5rem;
 	transition: transform 2s;
 
@@ -32,9 +31,9 @@ export const ToggleWrapper = styled(animated.div)`
 `;
 
 export const LightModeIcon = styled(animated(MdDarkMode))`
-	font-size: 6rem;
+	font-size: 7rem;
 `;
 
 export const DarkModeIcon = styled(animated(MdOutlineDarkMode))`
-	font-size: 6rem;
+	font-size: 7rem;
 `;

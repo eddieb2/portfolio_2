@@ -14,7 +14,7 @@ const ThemeToggle = ({ theme, themeToggler }) => {
 		<ToggleWrapper>
 			{transitions((style, theme) => {
 				return theme === 'light' ? (
-					<LightModeIcon
+					<DarkModeIcon
 						style={style}
 						onClick={themeToggler}
 					/>

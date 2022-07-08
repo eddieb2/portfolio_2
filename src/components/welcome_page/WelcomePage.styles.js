@@ -3,8 +3,16 @@ import { animated } from 'react-spring';
 
 export const WelcomeWrapper = styled(animated.div)`
 	position: absolute;
-
-	font-size: 7rem;
+	left: 150px;
+	top: 250px;
+	font-size: 8.5rem;
+	/* Removes ability to highlight the welcome text on all browsers */
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
 
 	@media (max-width: 1200px) {
 		font-size: 6rem;

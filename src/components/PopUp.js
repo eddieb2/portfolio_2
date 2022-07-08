@@ -26,8 +26,6 @@ const PopUp = (props) => {
 		config: { duration: 3000 },
 	});
 
-	const animatedProps2 = useSpring({});
-
 	return (
 		<div id='popup-parent'>
 			<animated.div style={animatedProps} id='section-wrapper'>

@@ -1,11 +1,11 @@
 export const lightTheme = {
 	body: '#6e82da',
-	text: '#FAFAFF',
+	text: '#354061',
 	fontFamily: "'Quicksand', sans-serif",
 };
 export const darkTheme = {
 	body: '#29324f',
-	text: '#FAFAFF',
+	text: '#C3B1E1',
 	fontFamily: "'Quicksand', sans-serif",
 };
 
