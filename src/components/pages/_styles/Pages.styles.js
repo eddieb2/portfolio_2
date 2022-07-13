@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { animated } from 'react-spring';
+import { Container } from '@mui/material';
 
-export const WelcomeWrapper = styled(animated.div)`
+export const Wrapper = styled(animated.div)`
 	position: absolute;
 	left: 150px;
 	top: 250px;

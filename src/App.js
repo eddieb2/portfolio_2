@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles, Wrapper } from './globalStyles';
+import {
+	GlobalStyles,
+	Wrapper,
+	ParallaxLayerStyled,
+} from './globalStyles';
 import { lightTheme, darkTheme } from './components/Themes';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 // Components
-import WelcomePage from './components/welcome_page/WelcomePage';
-import Popup from './components/PopUp';
+import Welcome from './components/pages/welcome_page/Welcome';
+import About from './components/pages/about_page/About';
+import Projects from './components/pages/projects_page/Projects';
 import ThemeToggle from './components/theme_toggle/ThemeToggle';
 
 const App = () => {
@@ -34,6 +39,21 @@ const App = () => {
 		}
 	};
 
+	const handleRedirect = (link) => {
+		if (link === 'linkedin') {
+			window
+				.open(
+					'https://www.linkedin.com/in/edward-blanciak/',
+					'_blank'
+				)
+				.focus();
+		} else {
+			window
+				.open('https://github.com/eddieb2', '_blank')
+				.focus();
+		}
+	};
+
 	return (
 		<ThemeProvider
 			theme={theme === 'light' ? lightTheme : darkTheme}
@@ -53,58 +73,43 @@ const App = () => {
 					<ParallaxLayer
 						offset={0}
 						speed={0}
-						onClick={() => scroll(1)}
+						// onClick={() => scroll(1)}
 					>
-						<WelcomePage text='w e l c o m e' />
+						<Welcome />
 						{/* FIXME Add notification to scroll */}
 					</ParallaxLayer>
 
-					<ParallaxLayer
+					<ParallaxLayerStyled
 						offset={0.6}
-						speed={1}
-						style={{
-							background: '#9DF7E5',
-							clipPath:
-								'polygon(20% 0, 70% 0, 50% 100%, 0% 100%)',
-						}}
+						speed={0.4}
 						onClick={() => scroll(1)}
 					/>
 
 					<ParallaxLayer
 						offset={1}
 						speed={0}
-						onClick={() => scroll(2)}
+						// onClick={() => scroll(2)}
 					>
-						<WelcomePage text='a b o u t' />
+						<About handleRedirect={handleRedirect} />
 					</ParallaxLayer>
 
-					<ParallaxLayer
+					<ParallaxLayerStyled
 						offset={1.6}
-						speed={1}
-						style={{
-							background: '#E5A9A9',
-							clipPath:
-								'polygon(20% 0, 70% 0, 50% 100%, 0% 100%)',
-						}}
+						speed={0.4}
 						onClick={() => scroll(2)}
 					/>
 
 					<ParallaxLayer
 						offset={2}
 						speed={0}
-						onClick={() => scroll(0)}
+						// onClick={() => scroll(0)}
 					>
-						<WelcomePage text='p r o j e c t s' />
+						<Projects handleRedirect={handleRedirect} />
 					</ParallaxLayer>
 
-					<ParallaxLayer
+					<ParallaxLayerStyled
 						offset={2.6}
-						speed={1}
-						style={{
-							background: '#D66BA0',
-							clipPath:
-								'polygon(20% 0, 70% 0, 50% 100%, 0% 100%)',
-						}}
+						speed={0.4}
 						onClick={() => scroll(0)}
 					/>
 				</Parallax>
@@ -114,3 +119,6 @@ const App = () => {
 };
 
 export default App;
+
+// text = 'p r o j e c t s';
+// text='a b o u t'

@@ -1,13 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
-import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import { ParallaxLayer } from '@react-spring/parallax';
 
 export const GlobalStyles = createGlobalStyle`
   *{
     box-sizing: border-box;
 
   }
+  
   html {
     font-size: 62.5%;
   }
@@ -19,9 +20,31 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     font-family: ${({ theme }) => theme.fontFamily};
-    transition: all 3s ease;   // FIXME causes screen to be white on mount
-    
+    // transition: background 3s ease;   // FIXME causes screen to be white on mount
   }
   `;
 
 export const Wrapper = styled(Container)``;
+
+export const ParallaxLayerStyled = styled(ParallaxLayer)`
+	background: ${({ theme }) => theme.text};
+	opacity: 0.4;
+	clip-path: polygon(20% 0, 70% 0, 50% 100%, 0% 100%);
+	transition: opacity 2s;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	@media (max-width: 1200px) {
+	}
+
+	@media (max-width: 800px) {
+	}
+
+	@media (max-width: 600px) {
+	}
+
+	@media (max-width: 450px) {
+	}
+`;
