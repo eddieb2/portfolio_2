@@ -2,12 +2,13 @@ import {
 	Wrapper,
 	Reflection,
 	TextWrapper,
-	Border,
+	SectionWrapper,
+	HWrapper,
+	PWrapper,
 } from '../_styles/Pages.styles';
 import { useSpring } from 'react-spring';
 import { Container } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
 
 const About = ({ handleRedirect }) => {
 	const fadeIn = useSpring({
@@ -24,49 +25,31 @@ const About = ({ handleRedirect }) => {
 		config: { duration: 2000 },
 	});
 
-	// FIXME Styles are temporary. Move to Styled components folder
-
 	return (
 		<Wrapper style={fadeIn}>
-			<TextWrapper>a b o u t</TextWrapper>
-			<Reflection style={fadeInReflection}>
-				a b o u t
-			</Reflection>
-			<Container
-				style={{
-					width: '100%',
-					marginTop: '15%',
-					borderLeft: '5px solid black',
-					borderRadius: '1rem',
-				}}
-			>
-				<div
-					style={{
-						fontSize: '3.6rem',
-						fontWeight: 'bold',
-					}}
-				>
-					EDDIE BLANCIAK
-				</div>
-				<div
-					style={{
-						fontSize: '2.2rem',
-						fontStyle: 'italic',
-						color: '#fff',
-					}}
-				>
-					software developer
-				</div>
+			<Container>
 				<div>
-					<LinkedInIcon
-						sx={{ fontSize: 50 }}
-						style={{
-							cursor: 'pointer',
-							color: '#fff',
-						}}
-						onClick={() => handleRedirect('linkedin')}
-					/>
+					<TextWrapper>a b o u t</TextWrapper>
+					<Reflection style={fadeInReflection}>
+						a b o u t
+					</Reflection>
 				</div>
+
+				<SectionWrapper>
+					<HWrapper>
+						Eddie Blanciak{' '}
+						<LinkedInIcon
+							sx={{ fontSize: 35 }}
+							style={{
+								cursor: 'pointer',
+								color: 'royalblue',
+							}}
+							onClick={() => handleRedirect('linkedin')}
+						/>
+						<PWrapper>software developer</PWrapper>
+						<PWrapper>general contractor</PWrapper>
+					</HWrapper>
+				</SectionWrapper>
 			</Container>
 		</Wrapper>
 	);

@@ -3,10 +3,13 @@ import {
 	Reflection,
 	TextWrapper,
 	Border,
+	SectionWrapper,
+	HWrapper,
 } from '../_styles/Pages.styles';
 import { useSpring } from 'react-spring';
 import { Container } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Projects = ({ handleRedirect }) => {
 	const fadeIn = useSpring({
@@ -25,31 +28,43 @@ const Projects = ({ handleRedirect }) => {
 
 	return (
 		<Wrapper style={fadeIn}>
-			<TextWrapper>p r o j e c t</TextWrapper>
-			<Reflection style={fadeInReflection}>
-				p r o j e c t
-			</Reflection>
-			<Container
-				style={{
-					fontSize: '2.8rem',
-					width: '100%',
-					marginTop: '15%',
-					borderLeft: '5px solid black',
-					borderRadius: '1rem',
-				}}
-			>
-				<b>PROJECTS COMING SOON</b>
-				<div>
-					<GitHubIcon
-						sx={{ fontSize: 50 }}
-						style={{
-							cursor: 'pointer',
-							color: '#fff',
-							marginTop: '5%',
-						}}
-						onClick={() => handleRedirect('github')}
-					/>
-				</div>
+			<Container>
+				<TextWrapper>p r o j e c t s</TextWrapper>
+				<Reflection style={fadeInReflection}>
+					p r o j e c t s
+				</Reflection>
+				<SectionWrapper>
+					<div>
+						<HWrapper>
+							Software Development{' '}
+							<GitHubIcon
+								sx={{ fontSize: 35 }}
+								style={{
+									cursor: 'pointer',
+									color: 'white',
+								}}
+								onClick={() =>
+									handleRedirect('github')
+								}
+							/>
+						</HWrapper>
+					</div>
+					<div>
+						<HWrapper>
+							Home Remodeling{' '}
+							<InstagramIcon
+								sx={{ fontSize: 35 }}
+								style={{
+									cursor: 'pointer',
+									color: 'pink',
+								}}
+								onClick={() =>
+									handleRedirect('instagram')
+								}
+							/>
+						</HWrapper>
+					</div>
+				</SectionWrapper>
 			</Container>
 		</Wrapper>
 	);

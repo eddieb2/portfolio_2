@@ -39,7 +39,15 @@ export const ParallaxLayerStyled = styled(ParallaxLayer)`
 	@media (max-width: 1200px) {
 	}
 
-	@media (max-width: 800px) {
+	@media (max-width: 850px) {
+		/* clip-path: polygon(
+			75% 0%,
+			90% 50%,
+			75% 100%,
+			0% 100%,
+			25% 50%,
+			0% 0%
+		); */
 	}
 
 	@media (max-width: 600px) {

@@ -13,6 +13,7 @@ import Welcome from './components/pages/welcome_page/Welcome';
 import About from './components/pages/about_page/About';
 import Projects from './components/pages/projects_page/Projects';
 import ThemeToggle from './components/theme_toggle/ThemeToggle';
+import MobilePage from './components/pages/mobile/MobilePage';
 
 const App = () => {
 	const [theme, setTheme] = useState(
@@ -39,11 +40,20 @@ const App = () => {
 		}
 	};
 
+	const screenWidth = window.screen.width;
+
 	const handleRedirect = (link) => {
 		if (link === 'linkedin') {
 			window
 				.open(
 					'https://www.linkedin.com/in/edward-blanciak/',
+					'_blank'
+				)
+				.focus();
+		} else if (link == 'instagram') {
+			window
+				.open(
+					'https://www.instagram.com/blanciakllc/',
 					'_blank'
 				)
 				.focus();
@@ -64,61 +74,68 @@ const App = () => {
 					theme={theme}
 					themeToggler={themeToggler}
 				/>
-				<Parallax
-					pages={3}
-					horizontal
-					ref={page}
-					style={{ overflow: 'hidden' }}
-				>
-					<ParallaxLayer
-						offset={0}
-						speed={0}
-						// onClick={() => scroll(1)}
+
+				{screenWidth > 700 ? (
+					<Parallax
+						pages={3}
+						horizontal
+						ref={page}
+						style={{ overflow: 'hidden' }}
 					>
-						<Welcome />
-						{/* FIXME Add notification to scroll */}
-					</ParallaxLayer>
+						<ParallaxLayer
+							offset={0}
+							speed={0}
+							// onClick={() => scroll(1)}
+						>
+							<Welcome />
+							{/* FIXME Add notification to scroll */}
+						</ParallaxLayer>
 
-					<ParallaxLayerStyled
-						offset={0.6}
-						speed={0.4}
-						onClick={() => scroll(1)}
-					/>
+						<ParallaxLayerStyled
+							offset={0.6}
+							speed={0.4}
+							onClick={() => scroll(1)}
+						/>
 
-					<ParallaxLayer
-						offset={1}
-						speed={0}
-						// onClick={() => scroll(2)}
-					>
-						<About handleRedirect={handleRedirect} />
-					</ParallaxLayer>
+						<ParallaxLayer
+							offset={1}
+							speed={0}
+							// onClick={() => scroll(2)}
+						>
+							<About handleRedirect={handleRedirect} />
+						</ParallaxLayer>
 
-					<ParallaxLayerStyled
-						offset={1.6}
-						speed={0.4}
-						onClick={() => scroll(2)}
-					/>
+						<ParallaxLayerStyled
+							offset={1.6}
+							speed={0.4}
+							onClick={() => scroll(2)}
+						/>
 
-					<ParallaxLayer
-						offset={2}
-						speed={0}
-						// onClick={() => scroll(0)}
-					>
-						<Projects handleRedirect={handleRedirect} />
-					</ParallaxLayer>
+						<ParallaxLayer
+							offset={2}
+							speed={0}
+							// onClick={() => scroll(0)}
+						>
+							<Projects
+								handleRedirect={handleRedirect}
+							/>
+						</ParallaxLayer>
 
-					<ParallaxLayerStyled
-						offset={2.6}
-						speed={0.4}
-						onClick={() => scroll(0)}
-					/>
-				</Parallax>
+						<ParallaxLayerStyled
+							offset={2.6}
+							speed={0.4}
+							onClick={() => scroll(0)}
+						/>
+					</Parallax>
+				) : (
+					<div>
+						<MobilePage />
+					</div>
+				)}
 			</>
+			}
 		</ThemeProvider>
 	);
 };
 
 export default App;
-
-// text = 'p r o j e c t s';
-// text='a b o u t'
